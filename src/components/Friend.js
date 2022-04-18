@@ -1,10 +1,17 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-function Friend(){
-  const name = "Dan";
+function Friend(props) {
   return (
-    <h3>{name}</h3>
+    <React.Fragment>
+      <h3>{props.name} | {props.location}</h3>
+    </React.Fragment>
   );
 }
+
+Friend.propTypes = {
+  name: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired 
+};
 
 export default Friend;
